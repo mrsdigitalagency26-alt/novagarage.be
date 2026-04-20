@@ -105,18 +105,18 @@ export default function App() {
 
       <section id='booking' className='max-w-7xl mx-auto px-6 py-20'>
         <SectionTitle>Booking Request</SectionTitle>
-        <form name='booking' method='POST' data-netlify='true' className='grid md:grid-cols-2 gap-4'>
+        <form name='booking' method='POST' data-netlify='true' onSubmit={(e)=>e.preventDefault()} className='grid md:grid-cols-2 gap-4'>
           <input type='hidden' name='form-name' value='booking' />
-          <input name='name' placeholder='Full Name' className='p-4 rounded-2xl bg-white/5 border border-white/10' />
-          <input name='phone' placeholder='Phone Number' className='p-4 rounded-2xl bg-white/5 border border-white/10' />
-          <input name='address' placeholder='Address' className='p-4 rounded-2xl bg-white/5 border border-white/10 md:col-span-2' />
+          <input name='name' placeholder='Full Name' className='p-4 rounded-2xl bg-white/5 border border-white/10' type='text' />
+          <input name='phone' placeholder='Phone Number' className='p-4 rounded-2xl bg-white/5 border border-white/10' type='tel' />
+          <input name='address' placeholder='Address' className='p-4 rounded-2xl bg-white/5 border border-white/10 md:col-span-2' type='text' />
           <select name='service' className='p-4 rounded-2xl bg-white/5 border border-white/10'>
             <option>Interior Detailing</option>
             <option>Deep Clean Extraction</option>
             <option>Full Detail</option>
           </select>
           <input name='vehicle' placeholder='Vehicle Model' className='p-4 rounded-2xl bg-white/5 border border-white/10' />
-          <textarea name='notes' placeholder='Extra Notes' className='p-4 rounded-2xl bg-white/5 border border-white/10 md:col-span-2 min-h-[140px]' />
+          <textarea name='notes' placeholder='Extra Notes' className='p-4 rounded-2xl bg-white/5 border border-white/10 md:col-span-2 min-h-[140px]'></textarea>
           <button className='bg-blue-500 p-4 rounded-2xl font-semibold md:col-span-2'>Reserve Premium Appointment</button>
         </form>
       </section>
