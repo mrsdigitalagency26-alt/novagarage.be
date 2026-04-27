@@ -314,7 +314,6 @@
   <header class="container hero">
 
     <div>
-
       <div class="badge">Premium Mobile Detailing</div>
 
       <h1 id="title">Luxury Detailing That Comes To You</h1>
@@ -327,7 +326,6 @@
         <a href="#booking" class="btn btn-primary">Book Now</a>
         <a href="https://wa.me/32489202801" class="btn btn-secondary">WhatsApp Quote</a>
       </div>
-
     </div>
 
     <div class="card">
@@ -381,14 +379,12 @@
     <h2 id="servicesTitle">Services</h2>
 
     <div class="grid-3">
-
       <div class="card" id="s1">Interior Detailing</div>
       <div class="card" id="s2">Exterior Detailing</div>
       <div class="card" id="s3">Full Detail</div>
       <div class="card" id="s4">Extraction Cleaning</div>
       <div class="card" id="s5">Leather Treatment</div>
       <div class="card" id="s6">Fleet Services</div>
-
     </div>
 
   </section>
@@ -399,34 +395,26 @@
 
       <div>
 
-        <h2>Why Belgium Chooses Nova Garage</h2>
+        <h2 id="whyTitle">Why Belgium Chooses Nova Garage</h2>
 
-        <ul>
-          <li>✓ We come directly to your home or workplace</li>
-          <li>✓ Premium products safe for family & luxury vehicles</li>
-          <li>✓ Save time, avoid waiting lines</li>
-          <li>✓ Flexible Monday to Saturday appointments</li>
-          <li>✓ Fast WhatsApp communication</li>
-          <li>✓ Transparent pricing, no surprises</li>
-          <li>✓ Belgium-wide service depending on distance</li>
-        </ul>
+        <p id="whyText">
+          ✓ We come directly to your home or workplace<br>
+          ✓ Premium products safe for family & luxury vehicles<br>
+          ✓ Save time, avoid waiting lines<br>
+          ✓ Flexible Monday to Saturday appointments<br>
+          ✓ Fast WhatsApp communication<br>
+          ✓ Transparent pricing, no surprises<br>
+          ✓ Belgium-wide service depending on distance
+        </p>
 
       </div>
 
       <div>
 
-        <h2>Built For Clients Who Expect More</h2>
+        <h2 id="aboutWhyTitle">Built For Clients Who Expect More</h2>
 
-        <p class="muted">
-          Nova Garage was created for busy people who still want a clean,
-          premium vehicle without losing hours at traditional car washes.
-        </p>
-
-        <br />
-
-        <p class="muted">
-          We combine convenience, professionalism and detailing passion to
-          deliver a luxury experience directly at your doorstep.
+        <p class="muted" id="aboutWhyText">
+          We combine convenience, professionalism and premium results directly at your doorstep.
         </p>
 
       </div>
@@ -440,27 +428,23 @@
     <h2 id="bookTitle">Reserve Premium Appointment</h2>
 
     <form>
-
-      <input type="text" placeholder="Full Name" />
-      <input type="tel" placeholder="Phone Number" />
-
-      <input type="text" placeholder="Address" class="full" />
+      <input type="text" placeholder="Full Name">
+      <input type="tel" placeholder="Phone Number">
+      <input type="text" placeholder="Address" class="full">
 
       <select>
         <option>Interior Detailing</option>
         <option>Exterior Detailing</option>
         <option>Full Detail</option>
-        <option>Fleet Service</option>
       </select>
 
-      <input type="text" placeholder="Vehicle Model" />
+      <input type="text" placeholder="Vehicle Model">
 
-      <textarea placeholder="Extra Notes" class="full"></textarea>
+      <textarea class="full" placeholder="Extra Notes"></textarea>
 
       <button class="btn btn-primary full" type="button">
         Send Booking Request
       </button>
-
     </form>
 
   </section>
@@ -472,17 +456,17 @@
     <div class="contact-grid">
 
       <div class="card">
-        <strong>Phone</strong><br />
+        <strong>Phone</strong><br>
         0489 20 28 01
       </div>
 
       <div class="card">
-        <strong>Email</strong><br />
+        <strong>Email</strong><br>
         novagarage.mn@gmail.com
       </div>
 
       <div class="card">
-        <strong>Location</strong><br />
+        <strong>Location</strong><br>
         Halle, Belgium
       </div>
 
@@ -496,12 +480,10 @@
   </section>
 
   <footer>
-    Open Mon - Sat 08:00 - 18:30 • Nova Garage • Not Only Clean — Nova Clean
+    Open Mon - Sat 08:00 - 18:30 • Nova Garage
   </footer>
 
-  <a href="https://wa.me/32489202801" class="floatwa">
-    WhatsApp
-  </a>
+  <a href="https://wa.me/32489202801" class="floatwa">WhatsApp</a>
 
   <script>
     const t = {
@@ -519,7 +501,17 @@
         s4: "Extraction Cleaning",
         s5: "Leather Treatment",
         s6: "Fleet Services",
-        bookTitle: "Reserve Premium Appointment"
+        bookTitle: "Reserve Premium Appointment",
+        whyTitle: "Why Belgium Chooses Nova Garage",
+        whyText: `✓ We come directly to your home or workplace
+✓ Premium products safe for family & luxury vehicles
+✓ Save time, avoid waiting lines
+✓ Flexible Monday to Saturday appointments
+✓ Fast WhatsApp communication
+✓ Transparent pricing, no surprises
+✓ Belgium-wide service depending on distance`,
+        aboutWhyTitle: "Built For Clients Who Expect More",
+        aboutWhyText: "We combine convenience, professionalism and premium results directly at your doorstep."
       },
 
       fr: {
@@ -536,7 +528,17 @@
         s4: "Nettoyage extraction",
         s5: "Traitement cuir",
         s6: "Services flotte",
-        bookTitle: "Réserver un rendez-vous premium"
+        bookTitle: "Réserver un rendez-vous premium",
+        whyTitle: "Pourquoi la Belgique choisit Nova Garage",
+        whyText: `✓ Nous venons chez vous ou au travail
+✓ Produits premium sûrs pour tous véhicules
+✓ Gagnez du temps
+✓ Horaires flexibles du lundi au samedi
+✓ Réponse rapide WhatsApp
+✓ Prix transparents
+✓ Service mobile en Belgique selon distance`,
+        aboutWhyTitle: "Conçu pour les clients exigeants",
+        aboutWhyText: "Nous combinons confort, professionnalisme et résultats premium directement chez vous."
       },
 
       nl: {
@@ -553,15 +555,30 @@
         s4: "Extractie reiniging",
         s5: "Leerbehandeling",
         s6: "Fleet services",
-        bookTitle: "Reserveer premium afspraak"
+        bookTitle: "Reserveer premium afspraak",
+        whyTitle: "Waarom België kiest voor Nova Garage",
+        whyText: `✓ Wij komen bij u thuis of op het werk
+✓ Premium producten veilig voor elk voertuig
+✓ Bespaar tijd
+✓ Flexibele afspraken maandag tot zaterdag
+✓ Snelle WhatsApp reactie
+✓ Transparante prijzen
+✓ Mobiele service in België afhankelijk van afstand`,
+        aboutWhyTitle: "Voor klanten die meer verwachten",
+        aboutWhyText: "Wij combineren gemak, professionaliteit en premium resultaten bij u aan huis."
       }
     };
 
     function setLang(lang) {
       for (let key in t[lang]) {
         const el = document.getElementById(key);
+
         if (el) {
-          el.innerText = t[lang][key];
+          if (key === "whyText") {
+            el.innerHTML = t[lang][key].replace(/\n/g, "<br>");
+          } else {
+            el.innerText = t[lang][key];
+          }
         }
       }
     }
