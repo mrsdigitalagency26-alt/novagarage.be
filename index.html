@@ -1,129 +1,623 @@
-import React, { useState } from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nova Garage | Luxury Mobile Detailing Belgium</title>
+<meta name="description" content="Premium mobile detailing across Belgium. Interior, exterior, extraction cleaning, family cars, luxury vehicles and fleet services." />
 
-const services = [
-  { title: 'Interior Detailing', price: 'From €89', desc: 'Deep vacuum, plastics, glass, finishing touches.' },
-  { title: 'Deep Clean Extraction', price: 'From €119', desc: 'Seats, carpets, stains, family vehicles.' },
-  { title: 'Full Detail', price: 'From €139', desc: 'Interior + exterior premium refresh.' },
-  { title: 'Leather Treatment', price: 'Quote', desc: 'Clean, nourish and protect leather.' },
-  { title: 'Fleet Services', price: 'Quote', desc: 'Business and office parking solutions.' },
-  { title: 'Membership Plans', price: 'Quote', desc: 'Monthly maintenance priority plans.' }
-];
-
-function SectionTitle({ children }) {
-  return <h2 className='text-4xl md:text-5xl font-bold mb-8'>{children}</h2>;
+<style>
+:root{
+  --bg:#050505;
+  --bg2:#0d0d0d;
+  --card:#111111;
+  --line:#242424;
+  --text:#ffffff;
+  --muted:#b9b9b9;
+  --blue:#2d9cff;
+  --blue2:#5bb6ff;
+  --radius:22px;
+  --shadow:0 20px 50px rgba(0,0,0,.35);
 }
 
-function ServiceCard({ item }) {
-  return (
-    <div className='p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-blue-400/40 transition'>
-      <h3 className='text-xl font-semibold'>{item.title}</h3>
-      <p className='text-blue-400 mt-2'>{item.price}</p>
-      <p className='text-white/60 mt-3'>{item.desc}</p>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:100%;
+  max-width:1250px;
+  margin:auto;
+  padding:0 24px;
+}
+
+/* NAVBAR */
+nav{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(5,5,5,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.logo span{
+  color:var(--blue);
+}
+
+.menu{
+  display:flex;
+  gap:22px;
+}
+
+.menu a{
+  color:#d1d1d1;
+  transition:.25s;
+}
+
+.menu a:hover{
+  color:#fff;
+}
+
+/* HERO */
+.hero{
+  padding:90px 0 70px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+  align-items:center;
+}
+
+.eyebrow{
+  color:var(--blue);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:4px;
+}
+
+.hero h1{
+  font-size:66px;
+  line-height:1.03;
+  margin:18px 0;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+  max-width:650px;
+}
+
+.btn-row{
+  margin-top:30px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 24px;
+  border-radius:16px;
+  font-weight:700;
+  transition:.25s;
+}
+
+.btn-primary{
+  background:var(--blue);
+}
+
+.btn-primary:hover{
+  background:var(--blue2);
+}
+
+.btn-secondary{
+  border:1px solid var(--line);
+}
+
+.btn-secondary:hover{
+  background:#111;
+}
+
+.badges{
+  margin-top:22px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  border:1px solid var(--line);
+  color:#ddd;
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:14px;
+}
+
+/* CARD */
+.card{
+  background:linear-gradient(180deg,#101010,#0c0c0c);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.card h3{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.price{
+  color:var(--blue);
+  font-weight:700;
+}
+
+/* GENERAL SECTION */
+section{
+  padding:80px 0;
+}
+
+.section-title{
+  font-size:42px;
+  margin-bottom:28px;
+}
+
+.section-sub{
+  color:var(--muted);
+  margin-bottom:30px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.service{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+  transition:.25s;
+}
+
+.service:hover{
+  transform:translateY(-5px);
+  border-color:#3a3a3a;
+}
+
+.service h4{
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.service p{
+  color:var(--muted);
+  margin-bottom:10px;
+}
+
+.service strong{
+  color:var(--blue);
+}
+
+/* WHY */
+.alt{
+  background:var(--bg2);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.list{
+  list-style:none;
+}
+
+.list li{
+  padding:10px 0;
+  color:#ddd;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.gallery-box{
+  height:220px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#171717,#0e0e0e);
+  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#666;
+  font-weight:700;
+}
+
+/* FORM */
+form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:15px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:#111;
+  color:#fff;
+  font-size:15px;
+}
+
+textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.full{
+  grid-column:span 2;
+}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.contact-box{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+}
+
+.contact-box h5{
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+/* FOOTER */
+footer{
+  padding:28px 0;
+  border-top:1px solid var(--line);
+  text-align:center;
+  color:#8d8d8d;
+}
+
+/* MOBILE */
+@media(max-width:1000px){
+
+.hero,
+split,
+.grid-3,
+.gallery,
+.contact-grid{
+  grid-template-columns:1fr;
+}
+
+.hero{
+  grid-template-columns:1fr;
+}
+
+.split{
+  grid-template-columns:1fr;
+}
+
+.gallery{
+  grid-template-columns:1fr;
+}
+
+.grid-3{
+  grid-template-columns:1fr;
+}
+
+.contact-grid{
+  grid-template-columns:1fr;
+}
+
+.hero h1{
+  font-size:44px;
+}
+
+.menu{
+  display:none;
+}
+
+form{
+  grid-template-columns:1fr;
+}
+
+.full{
+  grid-column:span 1;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">NOVA <span>GARAGE</span></div>
+
+    <div class="menu">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#gallery">Results</a>
+      <a href="#booking">Booking</a>
+      <a href="#contact">Contact</a>
     </div>
-  );
-}
+  </div>
+</nav>
 
-export default function App() {
-  const [lang, setLang] = useState('EN');
+<header class="container hero">
 
-  return (
-    <div className='min-h-screen bg-black text-white font-sans'>
-      <header className='sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-white/10'>
-        <div className='max-w-7xl mx-auto px-6 py-4 flex justify-between items-center'>
-          <div>
-            <div className='text-2xl font-bold tracking-widest'>NOVA GARAGE</div>
-            <div className='text-xs text-white/40'>Not Only Clean • Nova Clean</div>
-          </div>
-          <nav className='hidden md:flex gap-6 text-sm text-white/70'>
-            <a href='#services'>Services</a>
-            <a href='#pricing'>Pricing</a>
-            <a href='#about'>About</a>
-            <a href='#booking'>Booking</a>
-          </nav>
-          <div className='flex gap-2 text-xs'>
-            {['EN','FR','NL'].map(l => (
-              <button key={l} onClick={() => setLang(l)} className={`px-3 py-2 rounded-xl ${lang===l ? 'bg-blue-500' : 'bg-white/10'}`}>
-                {l}
-              </button>
-            ))}
-          </div>
-        </div>
-      </header>
+  <div>
+    <div class="eyebrow">Luxury Mobile Detailing Belgium</div>
 
-      <section className='max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center'>
-        <div>
-          <p className='uppercase tracking-[0.3em] text-xs text-blue-400'>Luxury Mobile Detailing Belgium</p>
-          <h1 className='text-5xl md:text-7xl font-bold mt-4 leading-tight'>Luxury Detailing That Comes To You</h1>
-          <p className='mt-6 text-lg text-white/70'>Serving homes, offices and premium clients across Belgium from Halle. Save time, enjoy showroom-level results, and book in minutes.</p>
-          <div className='mt-8 flex flex-wrap gap-4'>
-            <a href='#booking' className='bg-blue-500 px-6 py-3 rounded-2xl font-semibold'>Book Online Now</a>
-            <a href='https://wa.me/32489202801' className='border border-white/20 px-6 py-3 rounded-2xl'>WhatsApp Instant Quote</a>
-          </div>
-        </div>
-        <div className='rounded-3xl p-8 bg-white/5 border border-white/10'>
-          <h3 className='text-2xl font-semibold mb-4'>Starting Prices</h3>
-          {services.slice(0,3).map(s => (
-            <div key={s.title} className='py-3 border-b border-white/10 flex justify-between'>
-              <span>{s.title}</span><span className='text-blue-400'>{s.price}</span>
-            </div>
-          ))}
-          <p className='text-white/40 text-sm mt-4'>Travel fee may apply depending on location.</p>
-        </div>
-      </section>
+    <h1>Luxury Detailing That Comes To You</h1>
 
-      <section id='services' className='max-w-7xl mx-auto px-6 py-20'>
-        <SectionTitle>Services</SectionTitle>
-        <div className='grid md:grid-cols-3 gap-6'>
-          {services.map(item => <ServiceCard key={item.title} item={item} />)}
-        </div>
-      </section>
+    <p>
+      Premium mobile car care delivered directly to your home or workplace.
+      Serving clients across Belgium from Halle with showroom-level results.
+    </p>
 
-      <section id='pricing' className='bg-white/5 border-y border-white/10'>
-        <div className='max-w-7xl mx-auto px-6 py-20'>
-          <SectionTitle>Why Belgium Chooses Nova Garage</SectionTitle>
-          <div className='grid md:grid-cols-2 gap-10 text-white/70'>
-            <ul className='space-y-3'>
-              <li>✓ Mobile service across Belgium</li>
-              <li>✓ Premium safe products</li>
-              <li>✓ Transparent pricing</li>
-              <li>✓ Family, luxury & fleet vehicles</li>
-            </ul>
-            <ul className='space-y-3'>
-              <li>✓ Fast response times</li>
-              <li>✓ Same-day slots when available</li>
-              <li>✓ Invoice available</li>
-              <li>✓ Satisfaction-first mindset</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id='about' className='max-w-7xl mx-auto px-6 py-20'>
-        <SectionTitle>Built For Clients Who Expect More</SectionTitle>
-        <p className='max-w-3xl text-white/70 text-lg'>Nova Garage was built from passion for cars and obsession for details. We bring professional detailing directly to homes and workplaces, delivering luxury-level convenience and results.</p>
-      </section>
-
-      <section id='booking' className='max-w-7xl mx-auto px-6 py-20'>
-        <SectionTitle>Booking Request</SectionTitle>
-        <form name='booking' method='POST' data-netlify='true' onSubmit={(e)=>e.preventDefault()} className='grid md:grid-cols-2 gap-4'>
-          <input type='hidden' name='form-name' value='booking' />
-          <input name='name' placeholder='Full Name' className='p-4 rounded-2xl bg-white/5 border border-white/10' type='text' />
-          <input name='phone' placeholder='Phone Number' className='p-4 rounded-2xl bg-white/5 border border-white/10' type='tel' />
-          <input name='address' placeholder='Address' className='p-4 rounded-2xl bg-white/5 border border-white/10 md:col-span-2' type='text' />
-          <select name='service' className='p-4 rounded-2xl bg-white/5 border border-white/10'>
-            <option>Interior Detailing</option>
-            <option>Deep Clean Extraction</option>
-            <option>Full Detail</option>
-          </select>
-          <input name='vehicle' placeholder='Vehicle Model' className='p-4 rounded-2xl bg-white/5 border border-white/10' />
-          <textarea name='notes' placeholder='Extra Notes' className='p-4 rounded-2xl bg-white/5 border border-white/10 md:col-span-2 min-h-[140px]'></textarea>
-          <button className='bg-blue-500 p-4 rounded-2xl font-semibold md:col-span-2'>Reserve Premium Appointment</button>
-        </form>
-      </section>
-
-      <footer className='border-t border-white/10 py-10 text-center text-white/40'>
-        Open Mon - Sat 08:00 - 18:30 • 0489 20 28 01 • novagarage.mn@gmail.com • Halle, Belgium
-      </footer>
+    <div class="btn-row">
+      <a href="#booking" class="btn btn-primary">Book Now</a>
+      <a href="https://wa.me/32489202801" class="btn btn-secondary">WhatsApp Quote</a>
     </div>
-  );
-}
+
+    <div class="badges">
+      <div class="badge">Across Belgium</div>
+      <div class="badge">From €89</div>
+      <div class="badge">Same-Day Slots*</div>
+      <div class="badge">Invoice Available</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Starting Prices</h3>
+
+    <div class="price-row">
+      <span>Interior Detailing</span>
+      <span class="price">€89</span>
+    </div>
+
+    <div class="price-row">
+      <span>Deep Clean Extraction</span>
+      <span class="price">€119</span>
+    </div>
+
+    <div class="price-row">
+      <span>Full Detail</span>
+      <span class="price">€139</span>
+    </div>
+
+    <div class="price-row">
+      <span>Family SUV / XL</span>
+      <span class="price">Quote</span>
+    </div>
+
+    <p style="margin-top:14px;color:#999;font-size:14px;">
+      Travel fee may apply depending on location.
+    </p>
+  </div>
+
+</header>
+
+<section id="services">
+  <div class="container">
+
+    <h2 class="section-title">Premium Services</h2>
+    <p class="section-sub">Everything your vehicle needs — at your doorstep.</p>
+
+    <div class="grid-3">
+
+      <div class="service">
+        <h4>Interior Detailing</h4>
+        <p>Vacuum, plastics, dashboard, glass, finishing touches.</p>
+        <strong>From €89</strong>
+      </div>
+
+      <div class="service">
+        <h4>Exterior Detailing</h4>
+        <p>Safe wash, wheels, drying, gloss enhancement.</p>
+        <strong>From €69</strong>
+      </div>
+
+      <div class="service">
+        <h4>Full Detail</h4>
+        <p>Interior + exterior complete premium refresh.</p>
+        <strong>From €139</strong>
+      </div>
+
+      <div class="service">
+        <h4>Deep Extraction</h4>
+        <p>Seats, carpets, stains, family vehicles.</p>
+        <strong>From €119</strong>
+      </div>
+
+      <div class="service">
+        <h4>Leather Treatment</h4>
+        <p>Clean, nourish and protect premium interiors.</p>
+        <strong>Quote</strong>
+      </div>
+
+      <div class="service">
+        <h4>Fleet & Corporate</h4>
+        <p>Office parking & business vehicle solutions.</p>
+        <strong>Custom Offer</strong>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="why">
+  <div class="container split">
+
+    <div>
+      <h2 class="section-title">Why Choose Nova Garage</h2>
+
+      <ul class="list">
+        <li>✓ We come to you</li>
+        <li>✓ Save time, skip waiting lines</li>
+        <li>✓ Premium safe products</li>
+        <li>✓ Trusted service</li>
+        <li>✓ Transparent pricing</li>
+        <li>✓ Same-day availability when possible</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="section-title">Built For Clients Who Expect More</h2>
+
+      <p style="color:#c5c5c5;margin-bottom:16px;">
+        Nova Garage was built from passion for cars and obsession for details.
+      </p>
+
+      <p style="color:#9f9f9f;">
+        We believe premium detailing should be convenient, professional and accessible.
+        That’s why we bring luxury-level car care directly to homes and workplaces across Belgium.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+
+    <h2 class="section-title">Real Results</h2>
+    <p class="section-sub">Replace these blocks with your Instagram photos later.</p>
+
+    <div class="gallery">
+      <div class="gallery-box">Before / After</div>
+      <div class="gallery-box">Interior Refresh</div>
+      <div class="gallery-box">SUV Deep Clean</div>
+      <div class="gallery-box">Luxury Finish</div>
+      <div class="gallery-box">Seat Extraction</div>
+      <div class="gallery-box">Fleet Care</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="booking" class="alt">
+  <div class="container">
+
+    <h2 class="section-title">Reserve Premium Appointment</h2>
+    <p class="section-sub">Fast response. Easy booking.</p>
+
+    <form>
+
+      <input type="text" placeholder="Full Name" />
+      <input type="tel" placeholder="Phone Number" />
+
+      <input type="text" placeholder="Address" class="full"/>
+
+      <select>
+        <option>Interior Detailing</option>
+        <option>Exterior Detailing</option>
+        <option>Full Detail</option>
+        <option>Deep Extraction</option>
+        <option>Fleet Service</option>
+      </select>
+
+      <input type="text" placeholder="Vehicle Model" />
+
+      <textarea placeholder="Extra Notes" class="full"></textarea>
+
+      <button class="btn btn-primary full" type="button">Send Booking Request</button>
+
+    </form>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact-grid">
+
+      <div class="contact-box">
+        <h5>Phone</h5>
+        <p>0489 20 28 01</p>
+      </div>
+
+      <div class="contact-box">
+        <h5>Email</h5>
+        <p>novagarage.mn@gmail.com</p>
+      </div>
+
+      <div class="contact-box">
+        <h5>Location</h5>
+        <p>Halle, Belgium</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  Open Mon - Sat 08:00 - 18:30 • Nova Garage • Not Only Clean — Nova Clean
+</footer>
+
+</body>
+</html>
