@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nova Garage | Premium Mobile Detailing</title>
+
+  <title>Nova Garage | Premium Mobile Detailing Belgium</title>
+
   <meta
     name="description"
-    content="Luxury mobile detailing across Belgium. Interior, exterior and premium car care at your doorstep."
+    content="Luxury mobile detailing across Belgium. Interior, exterior, fleet and premium car care at your doorstep."
   />
 
   <style>
@@ -22,9 +25,9 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top right, #14273d 0%, #050505 35%, #050505 100%);
+      background: radial-gradient(circle at top right, #14283d 0%, #050505 35%, #050505 100%);
       color: white;
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     a {
@@ -33,7 +36,7 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1250px;
       margin: auto;
       padding: 0 24px;
     }
@@ -42,9 +45,9 @@
       position: sticky;
       top: 0;
       z-index: 999;
-      background: rgba(0, 0, 0, 0.9);
-      border-bottom: 1px solid #222;
+      background: rgba(0, 0, 0, 0.92);
       backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
     }
 
     .nav-inner {
@@ -52,6 +55,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 18px 0;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -64,6 +69,7 @@
       display: flex;
       gap: 20px;
       color: #ccc;
+      flex-wrap: wrap;
     }
 
     .menu a:hover {
@@ -71,8 +77,8 @@
     }
 
     .lang button {
-      margin-left: 8px;
       padding: 8px 12px;
+      margin-left: 8px;
       border-radius: 10px;
       border: 1px solid #333;
       background: #111;
@@ -81,10 +87,10 @@
     }
 
     .hero {
-      padding: 90px 0;
+      padding: 110px 0;
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
+      gap: 45px;
       align-items: center;
     }
 
@@ -93,15 +99,20 @@
       padding: 8px 14px;
       border-radius: 999px;
       border: 1px solid #2f9bff;
-      color: #8cc8ff;
-      margin-bottom: 18px;
+      color: #8fc9ff;
+      margin-bottom: 20px;
       font-size: 14px;
     }
 
     h1 {
       font-size: 64px;
       line-height: 1.05;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 42px;
+      margin-bottom: 28px;
     }
 
     .muted {
@@ -111,8 +122,8 @@
     .buttons {
       display: flex;
       gap: 14px;
-      margin-top: 28px;
       flex-wrap: wrap;
+      margin-top: 30px;
     }
 
     .btn {
@@ -127,7 +138,7 @@
     }
 
     .btn-primary:hover {
-      background: #55b1ff;
+      background: #56b1ff;
     }
 
     .btn-secondary {
@@ -147,8 +158,8 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(47, 155, 255, 0.18);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(47, 155, 255, 0.18);
     }
 
     .price-row {
@@ -164,18 +175,19 @@
     }
 
     section {
-      padding: 70px 0;
-    }
-
-    h2 {
-      font-size: 42px;
-      margin-bottom: 24px;
+      padding: 95px 0;
     }
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
     }
 
     .alt {
@@ -184,18 +196,13 @@
       border-bottom: 1px solid #222;
     }
 
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
+    ul {
+      list-style: none;
     }
 
-    .stats {
-      margin-bottom: 30px;
-    }
-
-    .stats .card {
-      text-align: center;
+    ul li {
+      padding: 10px 0;
+      color: #ddd;
     }
 
     form {
@@ -227,25 +234,25 @@
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     iframe {
       width: 100%;
-      height: 260px;
+      height: 300px;
       border: 0;
       border-radius: 18px;
-      margin-top: 22px;
+      margin-top: 30px;
     }
 
     footer {
-      padding: 28px 0;
+      padding: 30px 0;
       border-top: 1px solid #222;
       text-align: center;
       color: #888;
     }
 
-    .whatsapp-float {
+    .floatwa {
       position: fixed;
       right: 20px;
       bottom: 20px;
@@ -257,7 +264,7 @@
       z-index: 999;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
       .hero,
       .grid-3,
       .split,
@@ -285,6 +292,7 @@
 
   <nav>
     <div class="container nav-inner">
+
       <div class="logo">NOVA GARAGE ✦</div>
 
       <div class="menu">
@@ -299,12 +307,14 @@
         <button onclick="setLang('fr')">FR</button>
         <button onclick="setLang('nl')">NL</button>
       </div>
+
     </div>
   </nav>
 
   <header class="container hero">
 
     <div>
+
       <div class="badge">Premium Mobile Detailing</div>
 
       <h1 id="title">Luxury Detailing That Comes To You</h1>
@@ -317,10 +327,12 @@
         <a href="#booking" class="btn btn-primary">Book Now</a>
         <a href="https://wa.me/32489202801" class="btn btn-secondary">WhatsApp Quote</a>
       </div>
+
     </div>
 
     <div class="card">
-      <h3 id="priceTitle">Starting Prices</h3>
+
+      <h2 style="font-size:30px;" id="priceTitle">Starting Prices</h2>
 
       <div class="price-row">
         <span id="p1">Interior Detailing</span>
@@ -336,19 +348,36 @@
         <span id="p3">Full Detail</span>
         <span class="blue">€139</span>
       </div>
+
     </div>
 
   </header>
 
-  <section class="container stats">
+  <section class="container">
+
     <div class="grid-3">
-      <div class="card">100+ Vehicles Detailed</div>
-      <div class="card">Belgium Wide Service</div>
-      <div class="card">Fast WhatsApp Booking</div>
+
+      <div class="card">
+        <strong>100+</strong><br />
+        <span class="muted">Vehicles Detailed</span>
+      </div>
+
+      <div class="card">
+        <strong>Belgium Wide</strong><br />
+        <span class="muted">Mobile Coverage</span>
+      </div>
+
+      <div class="card">
+        <strong>Fast Response</strong><br />
+        <span class="muted">WhatsApp Booking</span>
+      </div>
+
     </div>
+
   </section>
 
   <section class="container" id="services">
+
     <h2 id="servicesTitle">Services</h2>
 
     <div class="grid-3">
@@ -361,38 +390,65 @@
       <div class="card" id="s6">Fleet Services</div>
 
     </div>
+
   </section>
 
   <section class="alt" id="why">
+
     <div class="container split">
 
       <div>
+
         <h2>Why Belgium Chooses Nova Garage</h2>
-        <p class="muted">
-          Premium products, transparent pricing, trusted service and total convenience.
-        </p>
+
+        <ul>
+          <li>✓ We come directly to your home or workplace</li>
+          <li>✓ Premium products safe for family & luxury vehicles</li>
+          <li>✓ Save time, avoid waiting lines</li>
+          <li>✓ Flexible Monday to Saturday appointments</li>
+          <li>✓ Fast WhatsApp communication</li>
+          <li>✓ Transparent pricing, no surprises</li>
+          <li>✓ Belgium-wide service depending on distance</li>
+        </ul>
+
       </div>
 
       <div>
+
         <h2>Built For Clients Who Expect More</h2>
+
         <p class="muted">
-          We bring luxury car care directly to your home or workplace.
+          Nova Garage was created for busy people who still want a clean,
+          premium vehicle without losing hours at traditional car washes.
         </p>
+
+        <br />
+
+        <p class="muted">
+          We combine convenience, professionalism and detailing passion to
+          deliver a luxury experience directly at your doorstep.
+        </p>
+
       </div>
 
     </div>
+
   </section>
 
   <section class="container" id="booking">
+
     <h2 id="bookTitle">Reserve Premium Appointment</h2>
 
     <form>
+
       <input type="text" placeholder="Full Name" />
       <input type="tel" placeholder="Phone Number" />
+
       <input type="text" placeholder="Address" class="full" />
 
       <select>
         <option>Interior Detailing</option>
+        <option>Exterior Detailing</option>
         <option>Full Detail</option>
         <option>Fleet Service</option>
       </select>
@@ -401,13 +457,16 @@
 
       <textarea placeholder="Extra Notes" class="full"></textarea>
 
-      <button type="button" class="btn btn-primary full">
+      <button class="btn btn-primary full" type="button">
         Send Booking Request
       </button>
+
     </form>
+
   </section>
 
   <section class="container" id="contact">
+
     <h2>Contact</h2>
 
     <div class="contact-grid">
@@ -431,21 +490,21 @@
 
     <iframe
       loading="lazy"
-      src="https://www.google.com/maps?q=Halle,Belgium&output=embed">
+      src="https://www.google.com/maps/place/NOVA+Garage/@50.8895522,3.479659,10z/data=!4m10!1m2!2m1!1sNova+Garage+!3m6!1s0x8244df4952f36f6d:0xf4c78a4c0a346099!8m2!3d50.7482476!4d4.2921048!15sCgtOb3ZhIEdhcmFnZZIBCGNhcl93YXNo4AEA!16s%2Fg%2F11ymhww_y1?hl=fr-FR&output=embed">
     </iframe>
 
   </section>
 
   <footer>
-    Open Mon-Sat 08:00-18:30 • Nova Garage
+    Open Mon - Sat 08:00 - 18:30 • Nova Garage • Not Only Clean — Nova Clean
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/32489202801">
+  <a href="https://wa.me/32489202801" class="floatwa">
     WhatsApp
   </a>
 
   <script>
-    const text = {
+    const t = {
       en: {
         title: "Luxury Detailing That Comes To You",
         desc: "Premium mobile detailing across Belgium from Halle.",
@@ -499,9 +558,11 @@
     };
 
     function setLang(lang) {
-      for (let key in text[lang]) {
+      for (let key in t[lang]) {
         const el = document.getElementById(key);
-        if (el) el.innerText = text[lang][key];
+        if (el) {
+          el.innerText = t[lang][key];
+        }
       }
     }
   </script>
